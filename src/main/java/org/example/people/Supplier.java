@@ -12,7 +12,8 @@ public class Supplier extends User implements Suppliers {
     @Override
     public void bringBook(Book book) {
         if (book.getInLibrary()) {
-            System.out.println(getRole() + " " + getName() + " ответил, что книга " + book.getTitle() + " уже находится в библиотеке.");
+            System.out.println(getRole() + " " + getName() + " ответил, что книга " + book.getTitle() +
+                    " уже находится в библиотеке.");
             System.out.println();
         } else {
             System.out.println(getRole() + " " + getName() + " доставил книгу " + book.getTitle() + " в библиотеку.");

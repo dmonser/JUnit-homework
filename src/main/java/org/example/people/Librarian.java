@@ -10,7 +10,8 @@ public class Librarian extends User implements Librarians {
 
     @Override
     public void orderBook(Book book, Suppliers suppliers) {
-        System.out.println(getRole() + " " + getName() + " заказал у " + suppliers.getRole() + " " + suppliers.getName() + " книгу " + book.getTitle());
+        System.out.println(getRole() + " " + getName() + " заказал у " + suppliers.getRole() + " " +
+                suppliers.getName() + " книгу " + book.getTitle());
         suppliers.bringBook(book);
     }
 }

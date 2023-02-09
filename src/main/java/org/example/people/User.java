@@ -15,11 +15,13 @@ public abstract class User implements Readers {
     public void takeBook(Book book) {
         if (book.getInLibrary()) {
             this.book = book;
-            System.out.println(role + " " + name + " взял книгу " + this.book.getTitle() + " в библиотеке на " + this.book.getMaxDeadline() + " дней.");
+            System.out.println(role + " " + name + " взял книгу " + this.book.getTitle() + " в библиотеке на " +
+                    this.book.getMaxDeadline() + " дней.");
             book.setInLibrary(false);
             book.setUser(name);
         } else {
-            System.out.println(role + " " + name + " не смог взять книгу " + book.getTitle() + " из-за того, что она отсутствует в библиотеке.");
+            System.out.println(role + " " + name + " не смог взять книгу " + book.getTitle() +
+                    " из-за того, что она отсутствует в библиотеке.");
         }
     }
 

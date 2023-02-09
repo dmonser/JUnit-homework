@@ -11,7 +11,8 @@ public class Administrator extends User implements Administrators, Librarians {
 
     @Override
     public void orderBook(Book book, Suppliers suppliers) {
-        System.out.println(getRole() + " " + getName() + " заказал у " + suppliers.getRole() + " " + suppliers.getName() + " книгу " + book.getTitle());
+        System.out.println(getRole() + " " + getName() + " заказал у " + suppliers.getRole() + " " +
+                suppliers.getName() + " книгу " + book.getTitle());
         suppliers.bringBook(book);
     }
 
@@ -22,11 +23,13 @@ public class Administrator extends User implements Administrators, Librarians {
         } else {
             Book book = readers.getBook();
             if (day > book.getMaxDeadline()) {
-                System.out.println(readers.getName() + "! Вы превысили время, на которое была выдана книга " + book.getTitle() + " на " +
+                System.out.println(readers.getName() + "! Вы превысили время, на которое была выдана книга " +
+                        book.getTitle() + " на " +
                         "" + (day - book.getMaxDeadline()) +
                         " дней. Прошу Вас в кратчайшие сроки вернуть ее в библиотеку!");
             } else {
-                System.out.println(readers.getName() + ", напоминаю, что у Вас осталось " + (book.getMaxDeadline() - day) + " дней до истечения срока. " +
+                System.out.println(readers.getName() + ", напоминаю, что у Вас осталось " +
+                        (book.getMaxDeadline() - day) + " дней до истечения срока. " +
                         "Не забудте вовремя вернуть книгу " + book.getTitle() + " в библиотеку.");
             }
         }
